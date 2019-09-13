@@ -4,14 +4,14 @@
 
 use App\Model;
 use Faker\Generator as Faker;
-/*
-$factory->define(App\Models\Recurso::class, function (Faker $faker) {
+
+$factory->define(App\Models\Programa::class, function (Faker $faker) {
     return [
-        'tipo_recurso'=>$faker->text($maxNbChars = 20),
-        'nombre'=>$faker->text($maxNbChars = 10),
+        'registro'=>$faker->numberBetween($min = 100, $max = 9000),
+        'nombre'=>$faker->company,
+        'informacion_programa'=>$faker->creditCardDetails,
         'clase_id'=> function(){
             return factory(App\Models\Clase::class)-> create()->id;
         }
     ];
 });
-*/

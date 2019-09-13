@@ -6,17 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Clase extends Model
 {
-  /*
+ 
     protected $table='clases';
 
     protected $fillable = ['nombre','aula','estado','curso_id' ];
    
     
-
     protected $hidden=['create_at','update_at','remember_token'];
 
-    public function recursos() {
-        return $this->hasMany('App\Models\Recurso');
+    public function programas() {
+        return $this->hasMany('App\Models\Programa');
  
      }
      public function cursos(){
@@ -27,15 +26,24 @@ class Clase extends Model
     
         return "{$this->id} {$this->nombre} {$this->aula} {$this->curso_id}";  
      }
+
+     public function getListaProgramaAttribute(){
+       return $this->programas;
+     }
+
+     public function getListaCursoAttribute(){
+      return $this->cursos;
+    }
+
+
     
      Protected $appends=[
-       'datos_clase',
-
-
+       'lista_programa',
+       
      ];
 
-     protected $casts = [
+   protected $casts = [
       'estado' => 'boolean',
   ];
-  */
+  
 }

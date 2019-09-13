@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Recurso;
+use App\Models\Programa;
 
-class RecursoController extends Controller
+class ProgramaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,13 +13,11 @@ class RecursoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    { 
-        /*
-        $recurso=Recurso::all();
-        return $recurso;
-        //return csrf_token();
-        //jfWMFZUIpHW3dt3ed71dzYdnW5rS8hntgf1TgHuR
-        */
+    {
+        $programa=Programa::all();
+        // return $programa;
+        return csrf_token();
+        //4MOj4vVxoInRY6O20yuG8uZTHEbM6k95MeA6Jl5M
     }
 
     /**
@@ -29,7 +27,7 @@ class RecursoController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -40,11 +38,9 @@ class RecursoController extends Controller
      */
     public function store(Request $request)
     {
-         /* 
         $data=$request->all();
-        $recurso=Recurso::create($data);
-        return $recurso;
-        */
+        $programa=Programa::create($data);
+        return $programa;
     }
 
     /**

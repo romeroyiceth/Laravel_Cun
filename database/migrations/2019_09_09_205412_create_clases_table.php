@@ -11,7 +11,7 @@ class CreateClasesTable extends Migration
      *
      * @return void
      */
-    /*public function up()
+    public function up()
     {
         Schema::create('clases', function (Blueprint $table) {
             $table->Increments('id');

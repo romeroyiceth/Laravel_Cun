@@ -15,14 +15,14 @@ class CursoController extends Controller
      */
     public function index()
     {
-        /*
+    
        //$curso=Curso::all();
        //return $curso;
         $curso=Curso::find(2);
         return $curso->informacion_curso;
 
         //return csrf_token();
-        */
+        
     }
 
     /**
@@ -32,7 +32,8 @@ class CursoController extends Controller
      */
     public function create()
     {
-        //
+        $curso=Curso::find(1);
+        return $curso->lista_clase;
     }
 
     /**
@@ -65,7 +66,7 @@ class CursoController extends Controller
      */
     public function edit($id)
     {
-        //
+        
     }
 
     /**

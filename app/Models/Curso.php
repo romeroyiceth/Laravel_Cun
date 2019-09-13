@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Curso extends Model
 {
-    /*
+   
     protected $table='cursos';
 
     protected $fillable = ['nombre','fecha_inicio','fecha_final' ];
@@ -20,7 +20,12 @@ class Curso extends Model
 
 
     public function getInformacionCursoAttribute(){
-        return "{$this->nombre}{$this->fecha_inicio}";
+        return "{$this->id} {$this->nombre}{$this->fecha_inicio}";
     }
-   */  
+
+    public function getListaClaseAttribute(){
+        return $this->clases;
+    }
+
+  
 }

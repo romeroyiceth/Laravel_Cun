@@ -20,13 +20,14 @@ Route::get('/editor', 'EditorController@index');
 Route::post('/editor', 'EditorController@store');
 Route::get('/editorial/create', 'EditorialController@create');
 Route::get('/editorial', 'EditorialController@index');
-Route::post('/editorial', 'EditorialController@store');
+
 
 
 //Rutas del Parcial
-/*
+
 Route::get('/curso', 'CursoController@index');
-Route::get('/recurso', 'RecursoController@index');
-Route::post('/recurso', 'RecursoController@store');
+Route::get('/curso/create', 'CursoController@create');
+Route::get('/programa', 'ProgramaController@index');
+Route::post('/programa', 'ProgramaController@store');
 Route::get('/clase', 'ClaseController@index');
-*/
+

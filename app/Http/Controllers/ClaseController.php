@@ -15,12 +15,13 @@ class ClaseController extends Controller
      */
     public function index()
     {
-        /*
-        $clase=Clase::find(6);
-        if ($clase->estado){
+        
+        $clase=Clase::find(2);
+        return $clase;
+        /*if ($clase->estado){
             return $clase;  
-        }
-        */
+        }*/
+        
     }
 
     /**

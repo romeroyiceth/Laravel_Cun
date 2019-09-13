@@ -5,7 +5,6 @@
 use App\Model;
 use Faker\Generator as Faker;
 
-/*
 $factory->define(App\Models\Curso::class, function (Faker $faker) {
     return [
         'nombre'=>$faker->text($maxNbChars = 20),
@@ -13,4 +12,3 @@ $factory->define(App\Models\Curso::class, function (Faker $faker) {
         'fecha_final'=>$faker->date($format = 'Y-m-d', $max = '2020-05-28')
     ];
 });
-*/

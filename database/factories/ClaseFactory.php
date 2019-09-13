@@ -5,7 +5,7 @@
 use App\Model;
 use Faker\Generator as Faker;
 
-/*
+
 $factory->define(App\Models\Clase::class, function (Faker $faker) {
     return [
         'nombre'=>$faker->text($maxNbChars = 20),
@@ -16,4 +16,3 @@ $factory->define(App\Models\Clase::class, function (Faker $faker) {
         }
     ];
 });
-*/
