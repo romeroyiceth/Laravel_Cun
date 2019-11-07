@@ -10,9 +10,8 @@ class Libro extends Model
 
     protected $fillable = ['id', 'nombre_del_libro', 'año_publicacion','autor_id' ];
    
-    
-   
-    public function autores(){
+ 
+    public function autor(){
         return $this->belongsTo('App\Models\Autor','autor_id');
     }
 }

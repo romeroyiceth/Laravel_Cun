@@ -31,3 +31,11 @@ Route::get('/programa', 'ProgramaController@index');
 Route::post('/programa', 'ProgramaController@store');
 Route::get('/clase', 'ClaseController@index');
 
+//Rutas Tercer Corte
+Route::get('/autor', 'AutorController@index');
+Route::post('/autor/crear', 'AutorController@store');
+Route::put('/autor/actualizar/{id}', 'AutorController@update');
+
+Route::post('/libro/crear', 'LibroController@store');
+
+

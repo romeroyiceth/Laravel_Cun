@@ -11,7 +11,7 @@ class AutorSeeder extends Seeder
      */
     public function run()
     {
-        $autores=factory(App\Models\Autor::class,10)
+        $autores=factory(App\Models\Autor::class,3)
         ->create()
         ->each(function($autor){
             $autor->libros()->save(factory(App\Models\Libro::class)->make());  

@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Programa;
+use App\Models\Libro;
+use App\Http\Requests\LibroRequest;
 
-class ProgramaController extends Controller
+class LibroController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,11 +15,7 @@ class ProgramaController extends Controller
      */
     public function index()
     {
-        $programa=Programa::all();
-         return $programa;
-       // return csrf_token();
-        //4MOj4vVxoInRY6O20yuG8uZTHEbM6k95MeA6Jl5M
-       // 4MOj4vVxoInRY6O20yuG8uZTHEbM6k95MeA6Jl5M
+        //
     }
 
     /**
@@ -28,7 +25,7 @@ class ProgramaController extends Controller
      */
     public function create()
     {
-        
+        //
     }
 
     /**
@@ -37,11 +34,13 @@ class ProgramaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(LibroRequest $request)
     {
         $data=$request->all();
-        $programa=Programa::create($data);
-        return $programa;
+        $libro=Libro::create($data);
+        return $libro;
+
+       
     }
 
     /**

@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Programa;
+use App\Models\Autor;
+use App\Http\Requests\AutorRequest;
 
-class ProgramaController extends Controller
+class AutorController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,11 +15,9 @@ class ProgramaController extends Controller
      */
     public function index()
     {
-        $programa=Programa::all();
-         return $programa;
-       // return csrf_token();
-        //4MOj4vVxoInRY6O20yuG8uZTHEbM6k95MeA6Jl5M
-       // 4MOj4vVxoInRY6O20yuG8uZTHEbM6k95MeA6Jl5M
+       $autor=Autor::all();
+       //return $autor;
+        return csrf_token();
     }
 
     /**
@@ -28,7 +27,7 @@ class ProgramaController extends Controller
      */
     public function create()
     {
-        
+        //
     }
 
     /**
@@ -37,11 +36,12 @@ class ProgramaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AutorRequest $request)
     {
         $data=$request->all();
-        $programa=Programa::create($data);
-        return $programa;
+        $autor=Autor::create($data);
+        return $autor;
+    
     }
 
     /**
@@ -73,9 +73,16 @@ class ProgramaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(AutorRequest $request, $id)
     {
-        //
+        $autor=Autor::find($id);
+        $datosc=array();
+        $datosc['nombre']=$request->nombre;
+        $datosc['apellido']=$request->apellido;
+    
+        $autor->update($datosc);
+        return $autor;
+    
     }
 
     /**

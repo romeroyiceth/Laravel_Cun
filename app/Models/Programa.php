@@ -13,8 +13,8 @@ class Programa extends Model
 
     protected $hidden=['create_at','update_at','remember_token'];
     
-    public function clases(){
-        return $this->belongsTo('App\Models\Clases','clase_id');
+    public function clase(){
+        return $this->belongsTo('App\Models\Clase','clase_id');
     }
     
 public function setNombreAttribute($value){

@@ -14,9 +14,17 @@ class Curso extends Model
 
     protected $hidden=['create_at','update_at','remember_token'];
 
-    public function clases() {
+
+    public function clases(){
         return $this->hasMany('App\Models\Clase');
-     }
+    }
+
+    
+    public function programas()
+    {
+        return $this->hasManyThrough('App\Models\Programa','App\Models\Clase');
+    }
+
 
 
     public function getInformacionCursoAttribute(){

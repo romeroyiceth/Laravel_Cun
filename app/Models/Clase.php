@@ -14,13 +14,13 @@ class Clase extends Model
     
     protected $hidden=['create_at','update_at','remember_token'];
 
-    public function programas() {
-        return $this->hasMany('App\Models\Programa');
- 
-     }
-     public function cursos(){
-        return $this->belongsTo('App\Models\Curso');
-    }
+    public function curso(){
+      return $this->belongsTo('App\Models\Curso','curso_id');
+  }
+
+  public function programas(){
+      return $this->hasMany('App\Models\Programa');
+  }
     
     public function getDatosClaseAttribute(){
     
