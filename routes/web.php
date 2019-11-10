@@ -37,5 +37,6 @@ Route::post('/autor/crear', 'AutorController@store');
 Route::put('/autor/actualizar/{id}', 'AutorController@update');
 
 Route::post('/libro/crear', 'LibroController@store');
+Route::put('/libro/actualizar/{id}', 'LibroController@update');
 
 

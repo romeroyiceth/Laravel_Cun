@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
-use App\Models\Libro;
-use App\Http\Requests\LibroRequest;
+use App\Http\Controllers\Controller;
+use App\Models\Clase;
+use App\Http\Resources\ClaseResource;
 
-class LibroController extends Controller
+class ClaseApiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +16,16 @@ class LibroController extends Controller
      */
     public function index()
     {
-        //
+        $result = Clase::all();
+        return ClaseResource::collection($result);
     }
+
+    public function curso_programa()
+    {
+        $result = Clase::all();
+        return ClaseResource::collection($result);
+    }
+    
 
     /**
      * Show the form for creating a new resource.
@@ -34,13 +43,9 @@ class LibroController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(LibroRequest $request)
+    public function store(Request $request)
     {
-        $data=$request->all();
-        $libro=Libro::create($data);
-        return $libro;
-
-       
+        //
     }
 
     /**
@@ -51,7 +56,7 @@ class LibroController extends Controller
      */
     public function show($id)
     {
-        //
+         
     }
 
     /**
@@ -62,7 +67,8 @@ class LibroController extends Controller
      */
     public function edit($id)
     {
-        //
+        $result= Clase::find($id);
+        return new ClaseResource($result);
     }
 
     /**
@@ -72,16 +78,9 @@ class LibroController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(LibroRequest $request, $id)
+    public function update(Request $request, $id)
     {
-        $libro=Libro::find($id);
-        $datosc=array();
-        $datosc['nombre_del_libro']=$request->nombre;
-        $datosc['año_publicacion']=$request->apellido;
-        $datosc['autor_id']=$request->apellido;
-    
-        $libro->update($datosc);
-        return $libro;
+        //
     }
 
     /**

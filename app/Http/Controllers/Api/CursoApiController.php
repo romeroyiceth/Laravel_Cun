@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
 use Illuminate\Http\Request;
-use App\Models\Libro;
-use App\Http\Requests\LibroRequest;
+use App\Http\Controllers\Controller;
+use App\Models\Curso;
+use App\Http\Resources\CursoResource;
 
-class LibroController extends Controller
+class CursoApiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +16,14 @@ class LibroController extends Controller
      */
     public function index()
     {
-        //
+        $result = Curso::all();
+        return CursoResource::collection($result);
     }
-
+    public function clase_curso()
+    {
+       $result = Curso::all();
+       return CursoResource::collection($result);
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -34,13 +40,9 @@ class LibroController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(LibroRequest $request)
+    public function store(Request $request)
     {
-        $data=$request->all();
-        $libro=Libro::create($data);
-        return $libro;
-
-       
+        //
     }
 
     /**
@@ -62,7 +64,8 @@ class LibroController extends Controller
      */
     public function edit($id)
     {
-        //
+        $result= Curso::find($id);
+        return new CursoResource($result); 
     }
 
     /**
@@ -72,16 +75,9 @@ class LibroController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(LibroRequest $request, $id)
+    public function update(Request $request, $id)
     {
-        $libro=Libro::find($id);
-        $datosc=array();
-        $datosc['nombre_del_libro']=$request->nombre;
-        $datosc['año_publicacion']=$request->apellido;
-        $datosc['autor_id']=$request->apellido;
-    
-        $libro->update($datosc);
-        return $libro;
+        //
     }
 
     /**
